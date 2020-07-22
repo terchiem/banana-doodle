@@ -1,0 +1,33 @@
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6, p, ul {
+  margin: 0;
+}
+
+body {
+  background-color: #eee;
+}
+
+.container {
+  margin: 3em auto;
+  max-width: 600px;
+  border: 1px solid red;
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid black;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  padding: 0.5em 2em;
+}
