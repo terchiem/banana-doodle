@@ -1,5 +1,7 @@
 const URL = 'https://banana-get.herokuapp.com/';
 
+const getButton = document.getElementById('get-button');
+const loading = document.getElementById('loading');
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
@@ -43,9 +45,9 @@ async function getBananas() {
 
 // Display load while getting bananas
 async function loadBananas() {
-  // toggle load
+  startLoad();
   bananas = await getBananas();
-  // toggle load
+  endLoad();
 }
 
 // Get banana button
@@ -58,12 +60,25 @@ async function handleClick(e) {
   }
 }
 
+// Display loading message and hide canvas
+function startLoad() {
+  loading.style.display = 'block';
+  canvas.style.display = 'none';
+  getButton.disabled = true;
+}
+
+// Hide loading message and display canvas
+function endLoad() {
+  loading.style.display = 'none';
+  canvas.style.display = 'block';
+  getButton.disabled = false;
+}
+
 async function setUp() {
   await loadBananas();
 }
 
 window.addEventListener('load', () => {
   setUp();
-  const getButton = document.getElementById('get-button');
   getButton.addEventListener('click', handleClick)
 });

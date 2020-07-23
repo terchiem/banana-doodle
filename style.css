@@ -32,7 +32,9 @@ body {
   margin: 1.2em auto;
   background-color: var(--yellow);
   display: flex;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
   border-radius: 4px;
   box-shadow: 0 2px 3px 4px rgba(0,0,0,0.1);
 }
@@ -41,6 +43,10 @@ canvas {
   display: block;
   margin: 0 auto;
   background-color: var(--yellow);
+}
+
+#loading {
+  display: none;
 }
 
 button {
