@@ -49,6 +49,12 @@ canvas {
   display: none;
 }
 
+#error {
+  display: none;
+  color: #ff4949;
+  padding: 1em;
+}
+
 button {
   display: block;
   margin: 0 auto;

@@ -45,9 +45,13 @@ async function getBananas() {
 
 // Display load while getting bananas
 async function loadBananas() {
-  startLoad();
-  bananas = await getBananas();
-  endLoad();
+  try {
+    startLoad();
+    bananas = await getBananas();
+    endLoad();
+  } catch (e) {
+    displayError();
+  }
 }
 
 // Get banana button
@@ -72,6 +76,15 @@ function endLoad() {
   loading.style.display = 'none';
   canvas.style.display = 'block';
   getButton.disabled = false;
+}
+
+// Display error message on server error
+function displayError() {
+  const error = document.getElementById('error');
+  error.style.display = 'block';
+  loading.style.display = 'none';
+  canvas.style.display = 'none';
+  getButton.disabled = true;
 }
 
 async function setUp() {
