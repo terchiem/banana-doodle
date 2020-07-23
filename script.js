@@ -1,4 +1,4 @@
-const URL = 'http://localhost:5000';
+const URL = 'https://banana-get.herokuapp.com/';
 
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
